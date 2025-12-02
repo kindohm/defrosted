@@ -5,7 +5,8 @@ import { Unknown } from "@/components/Unknown";
 import { getDefrostedStatus } from "@/getDefrostedStatus";
 
 export default function Home() {
-  const status = getDefrostedStatus(new Date());
+  const now = new Date();
+  const status = getDefrostedStatus(now);
 
   return (
     <main className="container" style={{ marginTop: "3rem" }}>
