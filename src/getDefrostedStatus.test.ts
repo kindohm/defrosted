@@ -51,4 +51,10 @@ describe("getDefrostedStatus", () => {
     const result = getDefrostedStatus(now);
     expect(result).toEqual("frozen");
   });
+
+  it("should return frozen on 2026-01-01", () => {
+    const now = new Date(2026, 0, 1);
+    const result = getDefrostedStatus(now);
+    expect(result).toEqual("frozen");
+  });
 });
