@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Defrosted } from "@/components/Defrosted";
 import { Frozen } from "@/components/Frozen";
@@ -7,7 +8,7 @@ import { Peak } from "@/components/Peak";
 import { Unknown } from "@/components/Unknown";
 import { getDefrostedStatus } from "@/getDefrostedStatus";
 
-export default function Home() {
+function HomeContent() {
   const searchParams = useSearchParams();
   const testDateParam = searchParams.get("testDate");
 
@@ -35,5 +36,13 @@ export default function Home() {
         <Unknown />
       )}
     </main>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeContent />
+    </Suspense>
   );
 }
