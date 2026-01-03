@@ -1,8 +1,5 @@
+import { Info } from "./Info";
+
 export const Unknown = () => {
-  return (
-    <div className="status-alert unknown" role="alert">
-      <h4>Unknown</h4>
-      <p>We don&apos;t know.</p>
-    </div>
-  );
+  return <Info headingText="Unknown" bodyText={`We don't know.`} />;
 };

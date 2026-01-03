@@ -23,18 +23,21 @@ function HomeContent() {
   const status = getDefrostedStatus(now);
 
   return (
-    <main className="container" style={{ marginTop: "3rem" }}>
-      <h1>Is Mariah Carey defrosted?</h1>
+    <main>
+      <section>
+        <h1>Is Mariah Carey defrosted?</h1>
+        <hr />
 
-      {status === "defrosted" ? (
-        <Defrosted />
-      ) : status === "frozen" ? (
-        <Frozen />
-      ) : status === "hot" ? (
-        <Peak />
-      ) : (
-        <Unknown />
-      )}
+        {status === "defrosted" ? (
+          <Defrosted />
+        ) : status === "frozen" ? (
+          <Frozen />
+        ) : status === "hot" ? (
+          <Peak />
+        ) : (
+          <Unknown />
+        )}
+      </section>
     </main>
   );
 }

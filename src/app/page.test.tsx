@@ -7,6 +7,10 @@ import * as statusModule from "@/getDefrostedStatus";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const typedExpect = expect as any;
 
+jest.mock("next/navigation", () => ({
+  useSearchParams: () => new URLSearchParams(),
+}));
+
 jest.mock("@/getDefrostedStatus");
 
 const mockGetDefrostedStatus =
